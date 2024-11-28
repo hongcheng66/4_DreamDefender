@@ -33,9 +33,12 @@ public class BuffController : MonoBehaviour
 
         for (int i = 0;i < 4;i++) //4是槽位的数量
         { 
-            int selected = Random.Range(0,availableBuff.Count);
-            buffBechosen.Add(availableBuff[selected]);
-            availableBuff.RemoveAt(selected);
+            if(availableBuff.Count >0)
+            {
+                int selected = Random.Range(0,availableBuff.Count);
+                buffBechosen.Add(availableBuff[selected]);
+                availableBuff.RemoveAt(selected);
+            }
         }
 
         for (int i = 0; i < buffBechosen.Count; i++) //将抽出的buff置入按钮中

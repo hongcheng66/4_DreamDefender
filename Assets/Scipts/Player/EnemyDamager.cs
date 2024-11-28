@@ -90,6 +90,10 @@ public class EnemyDamager : MonoBehaviour
                     Destroy(gameObject);
                 }
             }
+            if(collision.tag == "Treasure")
+            {
+                collision.GetComponent<Enemy_TreasureBox>().TakeDamage(damageAmount);
+            }
         }
         else
         {
