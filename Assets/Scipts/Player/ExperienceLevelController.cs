@@ -13,6 +13,8 @@ public class ExperienceLevelController : MonoBehaviour
 
     public int currentExperience;
 
+    public int addition = 0;
+
     public ExpPickup pickup;
 
     public List<int> expLevels;
@@ -37,7 +39,7 @@ public class ExperienceLevelController : MonoBehaviour
 
     public void GetExp(int amountToGet)
     {
-        currentExperience += amountToGet;
+        currentExperience += amountToGet + addition;
 
         if(currentExperience >= expLevels[currentLevel])
         {

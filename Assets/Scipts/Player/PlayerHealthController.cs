@@ -37,7 +37,7 @@ public class PlayerHealthController : MonoBehaviour
 
     void Update()
     {
-        currentHealth = currentHealth + healthrate;
+        currentHealth +=  healthrate * Time.deltaTime; //每秒回血速率
         healthSlider.value = currentHealth;
 
     }
