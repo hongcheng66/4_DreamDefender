@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   expValue: 1
-  moveSpeed: 5
+  moveSpeed: 7
   timeBetweenChecks: 0.2
 --- !u!1 &8575459984718393077
 GameObject:

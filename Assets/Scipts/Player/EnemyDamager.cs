@@ -6,6 +6,8 @@ public class EnemyDamager : MonoBehaviour
 {
     public float damageAmount;
 
+    public bool isIndepend;
+
     public float lifeTime,growSpeed = 5f;
     private Vector3 targetSize;
 
@@ -20,6 +22,8 @@ public class EnemyDamager : MonoBehaviour
     private List<EnemyController> enemiesInRange = new List<EnemyController>();
 
     public bool destroyOnImpact;
+
+    public bool canDefendBullet = false;
 
 
     // Start is called before the first frame update
@@ -38,7 +42,15 @@ public class EnemyDamager : MonoBehaviour
 
         lifeTime -= Time.deltaTime;
 
-        if(lifeTime <= 0)
+        //判断消除投掷物的buff有没有被激活
+        if(gameObject.tag == "DefendBulletWeapon")
+        {
+            Buff_DefendBullet buff = FindObjectOfType<Buff_DefendBullet>();
+            if (buff != null)
+                canDefendBullet = true;
+        }
+
+        if(lifeTime <= 0 && isIndepend == false)
         {
             targetSize = Vector3.zero;
 
@@ -79,6 +91,14 @@ public class EnemyDamager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(canDefendBullet == true)
+        {
+            if(collision.tag == "EnemyBullet")
+            {
+                Destroy(collision.gameObject);
+            }
+        }
+
         if(damageOverTime == false)
         {
             if(collision.tag == "Enemy")

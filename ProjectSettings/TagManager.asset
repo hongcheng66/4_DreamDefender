@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - Core
+  - Treasure
+  - EnemyBullet
+  - DefendBulletWeapon
   layers:
   - Default
   - TransparentFX

@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
         if (assignedWeapons.Count == 0)
         {
             //AddWeapon(Random.Range(0,unassignedWeapons.Count));   
-            AddWeapon(2);
+            AddWeapon(3);
         }
 
         for (int i = 0; i < unassignedWeapons.Count; i++)
@@ -93,12 +93,12 @@ public class PlayerController : MonoBehaviour
         if (awakeStat == true)
         {
             awakeStat = false;
-            moveSpeed *= 0.8f;
+            moveSpeed *= 0.6f;
         }
         else
         {
             awakeStat = true;
-            moveSpeed = moveSpeed / 0.8f;
+            moveSpeed = moveSpeed / 0.6f;
         }
     }
 
