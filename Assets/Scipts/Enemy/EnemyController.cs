@@ -33,6 +33,10 @@ public class EnemyController : MonoBehaviour
     public bool isBackSan = false;
     public float backSanAmount = 0f;
 
+    [Header("Kill Enemy Recover Health")]
+    public bool isBackHealth = false;
+    public float backHealthAmount = 0f;
+
     [Header("Positive Enemy")]
     public bool isPositive = false;
 
@@ -162,6 +166,11 @@ public class EnemyController : MonoBehaviour
             if(isBackSan == true)
             {
                 CoreSanController.instance.AddSan(backSanAmount);
+            }
+
+            if(isBackHealth == true)
+            {
+                PlayerHealthController.instance.AddHealth(backHealthAmount);
             }
 
             SFXManager.instance.PlaySFXPitched(0);//µ–»ÀÀ¿Õˆ“Ù–ß

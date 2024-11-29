@@ -38,7 +38,12 @@ public class PlayerHealthController : MonoBehaviour
     void Update()
     {
         currentHealth +=  healthrate * Time.deltaTime; //每秒回血速率
+        if (currentHealth > maxHealth)
+            currentHealth = maxHealth;
+
+
         healthSlider.value = currentHealth;
+
 
     }
 
@@ -53,6 +58,16 @@ public class PlayerHealthController : MonoBehaviour
         currentHealth += changeHealth;
 
         healthSlider.maxValue = maxHealth;
+        healthSlider.value = currentHealth;
+    }
+
+    public void AddHealth(float amount) //用于外部函数调用恢复生命值
+    {
+        currentHealth += amount;
+
+        if (currentHealth > maxHealth)
+            currentHealth = maxHealth;
+
         healthSlider.value = currentHealth;
     }
 
