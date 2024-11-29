@@ -27,7 +27,7 @@ public class LevelManager : MonoBehaviour
     {
         if(gameActive == true)
         {
-            //timer += Time.deltaTime;
+            timer += Time.deltaTime;
             //UIController.instance.UpdateTimer(timer);
         }
     }

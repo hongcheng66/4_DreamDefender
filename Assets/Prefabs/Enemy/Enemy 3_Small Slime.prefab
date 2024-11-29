@@ -122,11 +122,16 @@ MonoBehaviour:
   coinValue: 1
   coinDropRate: 0.5
   isalive: 1
-  isArcher: 0
-  bullet: {fileID: 0}
-  timeBetweenAttacks: 0
-  bulletFlyingTime: 0
-  bulletDamage: 0
+  isBackSan: 0
+  backSanAmount: 0
+  isBackHealth: 0
+  backHealthAmount: 0
+  isPositive: 0
+  isArcher: 1
+  bullet: {fileID: 3350118262265851350, guid: 2cfc913f66e88ab4f9df7dca7ac26daf, type: 3}
+  timeBetweenAttacks: 2
+  bulletFlyingTime: 3
+  bulletDamage: 4
   isStrike: 0
 --- !u!114 &7240610696972133460
 MonoBehaviour:

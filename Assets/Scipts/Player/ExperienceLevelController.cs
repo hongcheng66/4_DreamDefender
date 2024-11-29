@@ -76,59 +76,63 @@ public class ExperienceLevelController : MonoBehaviour
 
     public void UpgradePanel()
     {
-        UIController.instance.levelUpPanel.SetActive(true);
-
-        Time.timeScale = 0f;
-
-        weaponToUpgrade.Clear();
-
-        List<Weapon> availableWeapons = new List<Weapon>();
-        availableWeapons.AddRange(player.assignedWeapons); //将以解锁的武器加入可使用的武器
-
-        if(availableWeapons.Count > 0)
+        if(player.fullyLeveledWeapons.Count !=  player.maxWeapons)
         {
-            int selected = Random.Range(0, availableWeapons.Count); //从可使用的武器中随机挑选一把加入升级的武器
-            weaponToUpgrade.Add(availableWeapons[selected]);
-            availableWeapons.RemoveAt(selected);
-        }
-            
-        if(player.assignedWeapons.Count + player.fullyLeveledWeapons.Count < 4) //如果持有的武器量未达到展示槽位上限
-        {
-            availableWeapons.AddRange(player.unassignedWeapons);   //在可使用的武器中加入还未解锁的武器
-        }
 
-        for(int i = weaponToUpgrade.Count;i < 4;i++)//将未解锁的武器加入列表
-        {
-            if (availableWeapons.Count > 0)
+            UIController.instance.levelUpPanel.SetActive(true);
+
+            Time.timeScale = 0f;
+
+            weaponToUpgrade.Clear();
+
+            List<Weapon> availableWeapons = new List<Weapon>();
+            availableWeapons.AddRange(player.assignedWeapons); //将以解锁的武器加入可使用的武器
+
+            if(availableWeapons.Count > 0)
             {
-                int selected = Random.Range(0, availableWeapons.Count); //再从可选择的武器中加入 3-以解锁的武器
+                int selected = Random.Range(0, availableWeapons.Count); //从可使用的武器中随机挑选一把加入升级的武器
                 weaponToUpgrade.Add(availableWeapons[selected]);
                 availableWeapons.RemoveAt(selected);
             }
-        }
-
-
-
-
-        for (int i = 0; i < weaponToUpgrade.Count;i++)
-        {
-            UIController.instance.levelUpButtons[i].UpdateButtonDisplay(weaponToUpgrade[i]);
-        }
-
-        for(int i = 0;i < UIController.instance.levelUpButtons.Length;i++)
-        {
-            if(i < weaponToUpgrade.Count)
+            
+            if(player.assignedWeapons.Count + player.fullyLeveledWeapons.Count < 4) //如果持有的武器量未达到展示槽位上限
             {
-                UIController.instance.levelUpButtons[i].gameObject.SetActive(true);
+                availableWeapons.AddRange(player.unassignedWeapons);   //在可使用的武器中加入还未解锁的武器
             }
-            else
+
+            for(int i = weaponToUpgrade.Count;i < 4;i++)//将未解锁的武器加入列表
             {
-                UIController.instance.levelUpButtons[i].gameObject.SetActive(false);
+                if (availableWeapons.Count > 0)
+                {
+                    int selected = Random.Range(0, availableWeapons.Count); //再从可选择的武器中加入 3-以解锁的武器
+                    weaponToUpgrade.Add(availableWeapons[selected]);
+                    availableWeapons.RemoveAt(selected);
+                }
             }
-        }
+
+
+
+
+            for (int i = 0; i < weaponToUpgrade.Count;i++)
+            {
+                UIController.instance.levelUpButtons[i].UpdateButtonDisplay(weaponToUpgrade[i]);
+            }
+
+            for(int i = 0;i < UIController.instance.levelUpButtons.Length;i++)
+            {
+                if(i < weaponToUpgrade.Count)
+                {
+                    UIController.instance.levelUpButtons[i].gameObject.SetActive(true);
+                }
+                else
+                {
+                    UIController.instance.levelUpButtons[i].gameObject.SetActive(false);
+                }
+            }
    
 
 
-        PlayerStatController.instance.UpdateDisplay();
+            PlayerStatController.instance.UpdateDisplay();
+        }
     }
 }

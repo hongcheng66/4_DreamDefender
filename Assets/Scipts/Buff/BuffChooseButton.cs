@@ -46,6 +46,7 @@ public class BuffChooseButton : MonoBehaviour,IPointerEnterHandler, IPointerExit
             if(EnemySpawner.instance.canGoNextWave == false)
             {
                 ExperienceLevelController.instance.UpgradePanel();
+                EnemySpawner.instance.canGoNextWave = true;
             }
         }
     }

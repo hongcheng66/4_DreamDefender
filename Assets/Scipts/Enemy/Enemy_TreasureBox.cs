@@ -47,6 +47,11 @@ public class Enemy_TreasureBox : MonoBehaviour
                             .FirstOrDefault()?.gameObject;
         player = target.GetComponent<PlayerController>();
 
+        if (FindObjectOfType<CoreController>().gameObject != null)
+        {
+            target = FindObjectOfType<CoreController>().gameObject;
+        }
+
     }
 
     // Update is called once per frame

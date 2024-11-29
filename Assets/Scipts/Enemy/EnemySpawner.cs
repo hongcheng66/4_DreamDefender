@@ -33,6 +33,8 @@ public class EnemySpawner : MonoBehaviour
 
     public bool canGoNextWave = true;
 
+    public bool isNodensBuff = false;
+
     private int animCounter = 1;
 
     // Start is called before the first frame update
@@ -71,6 +73,9 @@ public class EnemySpawner : MonoBehaviour
                     
                     if(animCounter == 1)
                     {
+                        if (isNodensBuff == true)
+                            CoreSanController.instance.AddSan(10f);
+
                         animCounter--;
                         canGoNextWave = false;
                         UIController.instance.treasureAnimation.SetActive(true);

@@ -45,6 +45,7 @@ public class Buff_Shadow : Buff
         shadow.GetComponent<PlayerController>().assignedbuffs.Clear();
         shadow.GetComponent<PlayerController>().unassignedbuffs.Clear();
 
+        /*
         Transform[] childTransforms = shadow.GetComponentsInChildren<Transform>(true);
 
         foreach (Transform child in childTransforms)
@@ -54,6 +55,7 @@ public class Buff_Shadow : Buff
                 Destroy(child.gameObject);
             }
         }
+        */
         shadows.Add(shadow);
     }
 }

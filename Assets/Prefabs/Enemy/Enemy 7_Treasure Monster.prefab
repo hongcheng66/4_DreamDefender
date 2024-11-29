@@ -156,8 +156,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 6263938643674162174}
   speed: 0.1
-  minSize: 0.03
-  maxSize: 0.06
+  minSize: 0.06
+  maxSize: 0.08
 --- !u!61 &3337420950057862085
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 7526955715727234363}
   theRB: {fileID: 6504323008831173287}
-  moveSpeed: 0.5
+  moveSpeed: 1
   damage: 0
   hitWaitTime: 1
   health: 5

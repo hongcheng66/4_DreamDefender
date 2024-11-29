@@ -8,7 +8,7 @@ public class CoreSanController : MonoBehaviour
     public static CoreSanController instance;
 
     public float currentSan;
-    public float maxSan = 100;
+    public float maxSan = 100f;
 
     public float additionRecover = 0f;
 
@@ -42,7 +42,6 @@ public class CoreSanController : MonoBehaviour
 
         if (currentSan <= 0)
         {
-            gameObject.SetActive(false);
 
             Instantiate(deathEffect, transform.position, transform.rotation);
 

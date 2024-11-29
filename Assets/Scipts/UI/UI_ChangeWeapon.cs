@@ -12,4 +12,10 @@ public class UI_ChangeWeapon : MonoBehaviour
     }
 
     public LevelUpSelectionButton[] levelUpButtons;
+
+    public void Skip()
+    {
+        gameObject.SetActive(false);
+        Time.timeScale = 1f;
+    }
 }

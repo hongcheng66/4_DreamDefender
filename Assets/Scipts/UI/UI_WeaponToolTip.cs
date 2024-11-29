@@ -29,7 +29,7 @@ public class UI_WeaponToolTip : UI_Tooltip
             weaponText.text = "½éÉÜ:" + weapon.stats[0].upgradeText;
             
         }
-        else if(weapon.weaponLevel + 1 > weapon.stats.Count)
+        else if(weapon.weaponLevel + 1 >= weapon.stats.Count)
         {
             weaponName.text = weapon.stats[weapon.weaponLevel].name;
             weaponSpeed.text = "ÎäÆ÷ËÙ¶È:" + weapon.stats[weapon.weaponLevel].speed;

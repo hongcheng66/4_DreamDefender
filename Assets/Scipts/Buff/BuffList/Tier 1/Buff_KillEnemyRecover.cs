@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Buff_KillEnemyRecover : Buff
 {
-    private void Update()
+    private GameObject target;
+
+    private void OnEnable()
     {
-        foreach (var enemy in EnemySpawner.instance.spawnedEnemies)
-        {
-            EnemyController script = enemy.GetComponent<EnemyController>();
-            script.isBackHealth = true;
-            script.backHealthAmount = 1f;
-        }
+        target = FindObjectsOfType<PlayerController>()
+                             .Where(pc => pc.gameObject.CompareTag("Player"))
+                             .FirstOrDefault()?.gameObject;
+
+        target.GetComponent<PlayerController>().isKillRecover = true;
+
     }
 }

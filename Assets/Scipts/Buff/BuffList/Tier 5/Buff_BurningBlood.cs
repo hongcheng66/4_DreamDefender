@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class Buff_KillEnemyGetSan : Buff
+public class Buff_BurningBlood : Buff
 {
     private GameObject target;
 
@@ -13,7 +13,8 @@ public class Buff_KillEnemyGetSan : Buff
                              .Where(pc => pc.gameObject.CompareTag("Player"))
                              .FirstOrDefault()?.gameObject;
 
-        target.GetComponent<PlayerController>().isKillBackSan = true;
+        target.GetComponent<PlayerHealthController>().isBurningBlood = true;
+        target.GetComponent<PlayerController>().moveSpeed *= 2;
 
     }
 }

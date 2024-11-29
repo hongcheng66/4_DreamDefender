@@ -195,17 +195,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theRB: {fileID: 6292045762660613681}
-  moveSpeed: 2
+  moveSpeed: 3
   damage: 7
   hitWaitTime: 1
   health: 5
   knockBackTime: 1
   sprite: {fileID: 8140118694813501247}
   waitTime: 1
-  expToGive: 2
+  expToGive: 3
   coinValue: 1
   coinDropRate: 0.5
   isalive: 1
+  isBackSan: 0
+  backSanAmount: 0
+  isBackHealth: 0
+  backHealthAmount: 0
+  isPositive: 1
   isArcher: 0
   bullet: {fileID: 0}
   timeBetweenAttacks: 0

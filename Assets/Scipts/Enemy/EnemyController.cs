@@ -6,9 +6,10 @@ using System.Linq;
 public class EnemyController : MonoBehaviour
 {
     public Rigidbody2D theRB;
-    public float originSpeed;
+    private float originSpeed;
     public float moveSpeed;
     private GameObject target;
+    private GameObject player;
 
     public float damage;
 
@@ -31,6 +32,8 @@ public class EnemyController : MonoBehaviour
     public bool isalive = true;
     private bool isappear = false;
 
+    private float damageRate = 1f;
+
     [Header("Kill Enemy Recover San")]
     public bool isBackSan = false;
     public float backSanAmount = 0f;
@@ -52,17 +55,23 @@ public class EnemyController : MonoBehaviour
     public float bulletDamage;
     public bool isStrike;
 
+    private bool CarterTrick = false;
+
     // Start is called before the first frame update
     void Start()
     {
         originSpeed = moveSpeed;
+        damageRate = 1f;
 
         isalive = true;
         StartCoroutine(ChangeAlpha(new Color(1, 1, 1, 0), Color.white, waitTime)); //实现透明出现效果
 
         if(isPositive == false)
         {
-            target = FindObjectOfType<CoreController>().gameObject;
+            if(FindObjectOfType<CoreController>().gameObject != null)
+            {
+                target = FindObjectOfType<CoreController>().gameObject;
+            }
         }
         else
         {
@@ -70,6 +79,10 @@ public class EnemyController : MonoBehaviour
                               .Where(pc => pc.gameObject.CompareTag("Player"))
                               .FirstOrDefault()?.gameObject;
         }
+
+        player = FindObjectsOfType<PlayerController>()
+                              .Where(pc => pc.gameObject.CompareTag("Player"))
+                              .FirstOrDefault()?.gameObject;
 
 
         if (isArcher)
@@ -89,6 +102,28 @@ public class EnemyController : MonoBehaviour
             {
                 if (target.activeSelf == true)
                 {
+                    if(player.GetComponent<PlayerController>().isAwakeDream == true) //buff
+                    {
+                        CarterTrick = true;
+                    }
+
+                    if(player.GetComponent<PlayerController>().isBurningSan == true)
+                    {
+                        damageRate += (CoreSanController.instance.maxSan - CoreSanController.instance.currentSan) * 0.02f;
+                    }
+
+                    if(player.GetComponent<PlayerController>().isKillRecover == true)
+                    {
+                        isBackHealth = true;
+                        backHealthAmount = 1f;
+                    }
+
+                    if (player.GetComponent<PlayerController>().isKillBackSan == true)
+                    {
+                        isBackSan = true;
+                        backSanAmount = 1f;
+                    }
+
                     if (knockBackCounter > 0)  //击退判定
                     {
                         knockBackCounter -= Time.deltaTime;
@@ -160,7 +195,7 @@ public class EnemyController : MonoBehaviour
         }
         if (collision.gameObject.tag == "Core")
         {
-            CoreSanController.instance.currentSan--;
+            CoreSanController.instance.currentSan -= damage;
             isalive = false;
             StartCoroutine(ChangeAlpha(Color.white, new Color(1, 1, 1, 0), waitTime));
         }
@@ -169,7 +204,10 @@ public class EnemyController : MonoBehaviour
 
     public void TakeDamage(float damageToTake)
     {
-        health -= damageToTake;
+        if (CarterTrick == true && player.GetComponent<PlayerController>().awakeStat == true)
+            health -= damageToTake * damageRate * 1.2f;
+        else
+            health -= damageToTake * damageRate;
 
         if (health <= 0 && isalive == true)
         {

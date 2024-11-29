@@ -10,11 +10,12 @@ public class PlayerHealthController : MonoBehaviour
     public static PlayerHealthController instance;
 
     public float currentHealth;
-    public float maxHealth = 100;
+    public float maxHealth = 100f;
     public float healthrate; //回血速率
 
-    public float reviveTime = 3f;
-    public float restReviveTime;
+    private float origin_reviveTime = 3f;
+    public float reviveTime = 3f; //复活时间
+    private float restReviveTime;
     public TMP_Text restTimeText;
 
     public Slider healthSlider;
@@ -24,6 +25,12 @@ public class PlayerHealthController : MonoBehaviour
     private GameObject target;
     private PlayerController player;
 
+    public bool isMedical = false;
+
+    public int deadCount = 0; //死亡次数计数
+
+    public bool isBurningBlood = false; //燃血急行buff
+
     private void Awake()
     {
         instance = this;
@@ -32,6 +39,7 @@ public class PlayerHealthController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        reviveTime = origin_reviveTime;
 
         target = FindObjectsOfType<PlayerController>()
                              .Where(pc => pc.gameObject.CompareTag("Player"))
@@ -48,12 +56,15 @@ public class PlayerHealthController : MonoBehaviour
     void Update()
     {
         currentHealth +=  healthrate * Time.deltaTime; //每秒回血速率
+
+        if (isBurningBlood)
+            currentHealth -= maxHealth * 0.05f * Time.deltaTime;
+
         if (currentHealth > maxHealth)
             currentHealth = maxHealth;
 
 
         healthSlider.value = currentHealth;
-
 
     }
 
@@ -89,6 +100,12 @@ public class PlayerHealthController : MonoBehaviour
 
             if(currentHealth <= 0 )
             {
+                if (isMedical == false)
+                    reviveTime += deadCount * 2f;
+                else
+                    reviveTime = origin_reviveTime;
+
+                deadCount++;
                 StartCoroutine(Revive());
             }
 
