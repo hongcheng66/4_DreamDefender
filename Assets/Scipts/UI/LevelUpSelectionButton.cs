@@ -20,7 +20,7 @@ public class LevelUpSelectionButton : MonoBehaviour,IPointerEnterHandler, IPoint
             upgradeDescText.text = "Éý¼¶";
             weaponIcon.sprite = theWeapon.icon;
 
-            nameLevelText.text = theWeapon.stats[theWeapon.weaponLevel].name + "Lv" + theWeapon.weaponLevel;
+            nameLevelText.text = theWeapon.stats[theWeapon.weaponLevel].name;
         }
         else
         {
