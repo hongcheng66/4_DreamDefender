@@ -6015,6 +6015,56 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &448401060
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 448401061}
+  - component: {fileID: 448401062}
+  m_Layer: 7
+  m_Name: Player_KillEnmeyGetSanII
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &448401061
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448401060}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 773746172}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &448401062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448401060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d692045caba8aa042b00531ea8d1c168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buffstats:
+    name: "\u632F\u594B\u7CBE\u795EII"
+    icon: {fileID: 0}
+    level: 4
+    describeText: "\u51FB\u6740\u654C\u4EBA\u4F1A\u56DE\u590D2\u70B9\u7406\u667A"
+  lowLevel: {fileID: 822363987}
 --- !u!1 &452514442
 GameObject:
   m_ObjectHideFlags: 0
@@ -9794,6 +9844,7 @@ Transform:
   m_Children:
   - {fileID: 984386308}
   - {fileID: 826948624}
+  - {fileID: 448401061}
   m_Father: {fileID: 452514443}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &773878312
@@ -10450,6 +10501,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 819722262}
   m_CullTransparentMesh: 1
+--- !u!1 &822363987
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 822363988}
+  - component: {fileID: 822363989}
+  m_Layer: 7
+  m_Name: Player_KillEnmeyGetSan
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &822363988
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822363987}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1151906425}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &822363989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822363987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f05352bdb0a66eb48aca93163dbfa12c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buffstats:
+    name: "\u632F\u594B\u7CBE\u795E"
+    icon: {fileID: 0}
+    level: 2
+    describeText: "\u51FB\u6740\u654C\u4EBA\u4F1A\u56DE\u590D1\u70B9\u7406\u667A"
 --- !u!1 &824432467
 GameObject:
   m_ObjectHideFlags: 0
@@ -12390,12 +12490,13 @@ MonoBehaviour:
   timeToSpawn: 1
   minSpawn: {fileID: 573217331}
   maxSpawn: {fileID: 248640566}
+  spawnedEnemies: []
   checkPerFrame: 50
   waves:
   - enemyToSpawn:
     - {fileID: 6739784224708706747, guid: be28bd60a9437c046944d51f17c3a4d6, type: 3}
     spawnWeight: 64000000
-    waveLength: 10
+    waveLength: 100
     timeBetweenSpawns: 1
   - enemyToSpawn:
     - {fileID: 6739784224708706747, guid: be28bd60a9437c046944d51f17c3a4d6, type: 3}
@@ -14156,6 +14257,7 @@ Transform:
   - {fileID: 48855374}
   - {fileID: 2060120320}
   - {fileID: 17093081}
+  - {fileID: 822363988}
   m_Father: {fileID: 452514443}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1154678867

@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
 
     private float despawnDistance;
 
-    private List<GameObject> spawnedEnemies = new List<GameObject>();//列表存放已经生成的怪物
+    public List<GameObject> spawnedEnemies = new List<GameObject>();//列表存放已经生成的怪物
 
     public int checkPerFrame;//每一帧检测的怪物数量
     private int enemyToCheck;

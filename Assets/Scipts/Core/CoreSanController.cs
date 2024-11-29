@@ -66,6 +66,16 @@ public class CoreSanController : MonoBehaviour
 
     }
 
+    public void AddSan(float amount) //用于外部天赋恢复san值
+    {
+        currentSan += amount;
+
+        if (currentSan > maxSan)
+            currentSan = maxSan;
+
+        SanSlider.value = currentSan;
+    }
+
     private IEnumerator RecoverSan()
     {
         isRecover = true;

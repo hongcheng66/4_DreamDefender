@@ -29,6 +29,14 @@ public class EnemyController : MonoBehaviour
     public bool isalive = true;
     private bool isappear = false;
 
+    [Header("Kill Enemy Recover San")]
+    public bool isBackSan = false;
+    public float backSanAmount = 0f;
+
+    [Header("Positive Enemy")]
+    public bool isPositive = false;
+
+    [Header("Archer")]
     public bool isArcher = false;
     public GameObject bullet;
     private GameObject aimTarget;
@@ -43,7 +51,16 @@ public class EnemyController : MonoBehaviour
     {
         isalive = true;
         StartCoroutine(ChangeAlpha(new Color(1, 1, 1, 0), Color.white, waitTime)); //实现透明出现效果
-        target = FindObjectOfType<CoreController>().transform;
+
+        if(isPositive == false)
+        {
+            target = FindObjectOfType<CoreController>().transform;
+        }
+        else
+        {
+            target = FindObjectOfType<PlayerController>().transform;
+        }
+
 
         if (isArcher)
         {
@@ -54,7 +71,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isappear)
+        if (isappear)
         {
             if (PlayerController.instance.gameObject.activeSelf == true)
             {
@@ -135,10 +152,16 @@ public class EnemyController : MonoBehaviour
             StartCoroutine(ChangeAlpha(Color.white, new Color(1, 1, 1, 0), waitTime)); //利用协程使敌人消失后销毁
 
             ExperienceLevelController.instance.SpawnExp(transform.position, expToGive);
-
+            /*  金币掉落 现已删除
             if (Random.value <= coinDropRate)
             {
                 CoinController.instance.DropCoin(transform.position, coinValue);
+            }
+            */
+
+            if(isBackSan == true)
+            {
+                CoreSanController.instance.AddSan(backSanAmount);
             }
 
             SFXManager.instance.PlaySFXPitched(0);//敌人死亡音效
