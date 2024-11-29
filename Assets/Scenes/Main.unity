@@ -623,7 +623,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u4F60\u6210\u529F\u5B88\u62A4\u4E86\u68A6\u5883"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c1edaa3ecb162c444becbb4e6edcd66d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5405c47b20c4af5449aebeeea7cd30e4, type: 2}
   m_sharedMaterial: {fileID: 1213609399967162842, guid: c1edaa3ecb162c444becbb4e6edcd66d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -687,7 +687,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 10.650391, w: -239.13275}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &44797214
@@ -914,7 +914,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buffstats:
     name: "\u62B5\u6321\u5B50\u5F39"
-    icon: {fileID: 0}
+    icon: {fileID: 858247798, guid: be55291aae08d434db3da3b59db3ab4a, type: 3}
     level: 2
     describeText: "\u90E8\u5206\u6B66\u5668\u4F1A\u6D88\u9664\u654C\u4EBA\u7684\u6295\u63B7\u7269"
 --- !u!1 &60600680
@@ -1560,7 +1560,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 478}
+  m_AnchoredPosition: {x: 0, y: 492}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &81081702
@@ -1698,7 +1698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buffstats:
     name: "\u52C7\u6562\u4E4B\u5FC3"
-    icon: {fileID: 21300000, guid: 999a1918c73458542a23961dbc94aa6f, type: 3}
+    icon: {fileID: 21300000, guid: 0e48e54d9b97a90448c43cea7e7b42ff, type: 3}
     level: 4
     describeText: "\u589E\u52A0\u68A6\u5883\u6838\u5FC3\u9020\u6210\u7684\u4F24\u5BB3"
   core_zone: {fileID: 1220249310}
@@ -3211,8 +3211,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u5347\u7EA7\u6548\u679C\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c1edaa3ecb162c444becbb4e6edcd66d, type: 2}
-  m_sharedMaterial: {fileID: 1213609399967162842, guid: c1edaa3ecb162c444becbb4e6edcd66d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5405c47b20c4af5449aebeeea7cd30e4, type: 2}
+  m_sharedMaterial: {fileID: 6423213317940349454, guid: 5405c47b20c4af5449aebeeea7cd30e4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3236,7 +3236,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.25
+  m_fontSize: 33.5
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3452,7 +3452,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -72}
+  m_AnchoredPosition: {x: 0, y: -47}
   m_SizeDelta: {x: 477.2073, y: 6.1505}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &235212966
@@ -3540,8 +3540,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.95539856, y: 0}
+  m_SizeDelta: {x: 1.9106, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &236842134
 MonoBehaviour:
@@ -3563,7 +3563,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4333,7 +4333,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u4ECB\u7ECD\uFF1A[\u6E05\u9192\u68A6][\u68A6\u6E38]\u5F3A\u8EAB\u5065\u4F53"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c1edaa3ecb162c444becbb4e6edcd66d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5405c47b20c4af5449aebeeea7cd30e4, type: 2}
   m_sharedMaterial: {fileID: 1213609399967162842, guid: c1edaa3ecb162c444becbb4e6edcd66d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4397,7 +4397,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: -281.771, z: 0, w: 3.456253}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &291485384
@@ -5623,8 +5623,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u5347\u7EA7\u6548\u679C\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c1edaa3ecb162c444becbb4e6edcd66d, type: 2}
-  m_sharedMaterial: {fileID: 1213609399967162842, guid: c1edaa3ecb162c444becbb4e6edcd66d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5405c47b20c4af5449aebeeea7cd30e4, type: 2}
+  m_sharedMaterial: {fileID: 6423213317940349454, guid: 5405c47b20c4af5449aebeeea7cd30e4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5648,7 +5648,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.25
+  m_fontSize: 33.5
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5963,8 +5963,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -23.199951}
-  m_SizeDelta: {x: 477.2073, y: 13.5293}
+  m_AnchoredPosition: {x: 3.8613, y: 0}
+  m_SizeDelta: {x: 478.07, y: 12.3231}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &448363824
 MonoBehaviour:
@@ -6013,7 +6013,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.494
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6063,7 +6063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buffstats:
     name: "\u632F\u594B\u7CBE\u795EII"
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: 76bcfdd4474d4e243a9b189b47afcaa0, type: 3}
     level: 4
     describeText: "\u51FB\u6740\u654C\u4EBA\u56DE\u590D2\u70B9\u7406\u667A"
   lowLevel: {fileID: 822363987}
@@ -7010,7 +7010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buffstats:
     name: "\u575A\u5F3A\u4E4B\u5FC3"
-    icon: {fileID: 21300000, guid: 8b7b0ef4d807ff9418f3be7bd1baebb7, type: 3}
+    icon: {fileID: 21300000, guid: 1fcbd9fe8c9f0e541b6ef94fd5467579, type: 3}
     level: 1
     describeText: "\u68A6\u5883\u6838\u5FC3\u53EC\u5524\u4E00\u5708\u6CD5\u9635 \u5BF9\u8FDB\u5165\u7684\u654C\u4EBA\u9020\u6210\u4F24\u5BB3
       \u4E3A\u53CB\u65B9\u5355\u4F4D\u52A0\u901F"
@@ -8677,7 +8677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buffstats:
     name: "\u52A0\u901FI"
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: d108fd7868d842d4da9401dd82542a1d, type: 3}
     level: 1
     describeText: "\u7565\u5FAE\u589E\u52A0\u79FB\u901F"
   improveSpeed: 0.5
@@ -8866,7 +8866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buffstats:
     name: "\u94A2\u7B4B\u94C1\u9AA8II"
-    icon: {fileID: 21300000, guid: ce78278130cfd1a46add45b6770a74ac, type: 3}
+    icon: {fileID: 21300000, guid: 5187c794a1808754e9dc029108ca6b47, type: 3}
     level: 3
     describeText: "\u663E\u8457\u63D0\u5347\u751F\u547D\u4E0A\u9650"
   improveMaxHealth: 50
@@ -10552,7 +10552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buffstats:
     name: "\u632F\u594B\u7CBE\u795E"
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: 649645c320f66d749bb1eb23c19acd52, type: 3}
     level: 2
     describeText: "\u51FB\u6740\u654C\u4EBA\u56DE\u590D1\u70B9\u7406\u667A"
 --- !u!1 &824432467
@@ -10614,7 +10614,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u540D\u79F0"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c1edaa3ecb162c444becbb4e6edcd66d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5405c47b20c4af5449aebeeea7cd30e4, type: 2}
   m_sharedMaterial: {fileID: 1213609399967162842, guid: c1edaa3ecb162c444becbb4e6edcd66d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -10678,7 +10678,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &824432470
@@ -10735,7 +10735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buffstats:
     name: "\u6355\u68A6\u8005II"
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: 1bd81d46e0a0be640b6be996342e236b, type: 3}
     level: 4
     describeText: "\u8F83\u5927\u589E\u52A0\u83B7\u5F97\u7684\u7ECF\u9A8C\u503C"
 --- !u!1 &834773594
@@ -11626,8 +11626,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u5347\u7EA7\u6548\u679C"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c1edaa3ecb162c444becbb4e6edcd66d, type: 2}
-  m_sharedMaterial: {fileID: 1213609399967162842, guid: c1edaa3ecb162c444becbb4e6edcd66d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5405c47b20c4af5449aebeeea7cd30e4, type: 2}
+  m_sharedMaterial: {fileID: 6423213317940349454, guid: 5405c47b20c4af5449aebeeea7cd30e4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -11651,7 +11651,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.25
+  m_fontSize: 33.5
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -12136,8 +12136,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.8633728, y: 0}
+  m_SizeDelta: {x: 1.7267, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &981653470
 GameObject:
@@ -12321,7 +12321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buffstats:
     name: "\u94A2\u7B4B\u94C1\u9AA8III"
-    icon: {fileID: 21300000, guid: 24bc753612eab0e4989f72f0e3759e41, type: 3}
+    icon: {fileID: 21300000, guid: d8ded5f8ce80a314d871c6bdedd37bba, type: 3}
     level: 4
     describeText: "\u5927\u5E45\u5EA6\u63D0\u5347\u751F\u547D\u4E0A\u9650"
   improveMaxHealth: 100
@@ -12497,7 +12497,7 @@ MonoBehaviour:
   - enemyToSpawn:
     - {fileID: 6739784224708706747, guid: be28bd60a9437c046944d51f17c3a4d6, type: 3}
     spawnWeight: 64000000
-    waveLength: 5
+    waveLength: 100
     timeBetweenSpawns: 1
   - enemyToSpawn:
     - {fileID: 6739784224708706747, guid: be28bd60a9437c046944d51f17c3a4d6, type: 3}
@@ -13958,7 +13958,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buffstats:
     name: "\u6740\u654C\u6062\u590D"
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: ede9a0bb970501742abb0a816ce87923, type: 3}
     level: 1
     describeText: "\u51FB\u6740\u654C\u4EBA\u540E\u6062\u590D\u5C11\u91CF\u751F\u547D\u503C"
 --- !u!1 &1112675615
@@ -15952,7 +15952,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u540D\u79F0-\u7B49\u7EA7"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c1edaa3ecb162c444becbb4e6edcd66d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5405c47b20c4af5449aebeeea7cd30e4, type: 2}
   m_sharedMaterial: {fileID: 1213609399967162842, guid: c1edaa3ecb162c444becbb4e6edcd66d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -16016,7 +16016,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: -51.2417}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1251225813
@@ -16158,7 +16158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buffstats:
     name: "\u94A2\u7B4B\u94C1\u9AA8"
-    icon: {fileID: 21300000, guid: d904e4e1de720b64892aa6abdc93f41c, type: 3}
+    icon: {fileID: 21300000, guid: aac4821b077e65b47aad1a37ce5e6089, type: 3}
     level: 1
     describeText: "\u7565\u5FAE\u589E\u52A0\u751F\u547D\u4E0A\u9650"
   improveMaxHealth: 25
@@ -16524,6 +16524,7 @@ GameObject:
   - component: {fileID: 1288646796}
   - component: {fileID: 1288646795}
   - component: {fileID: 1288646794}
+  - component: {fileID: 1288646797}
   m_Layer: 7
   m_Name: Zone Weapon Effect
   m_TagString: Untagged
@@ -16602,7 +16603,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.4
+  m_Radius: 2.3014555
 --- !u!212 &1288646796
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16655,6 +16656,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1288646797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288646792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa319a1616c936648953cd14736a07f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healCounter: 0
 --- !u!1 &1318808310
 GameObject:
   m_ObjectHideFlags: 0
@@ -17712,7 +17726,7 @@ GameObject:
   - component: {fileID: 1473578606}
   - component: {fileID: 1473578607}
   m_Layer: 7
-  m_Name: Throwing Axes
+  m_Name: Flame Rain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17747,56 +17761,62 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-  - name: 1
+  - name: "\u5929\u5760\u706B\u96E8"
     speed: 0
-    damage: 5
+    damage: 1
     range: 1
     timeBetweenAttacks: 1.5
-    amount: 1
-    duration: 1
-    upgradeText: Plus Damage
-  - name: 1
-    speed: 0
-    damage: 10
-    range: 1
-    timeBetweenAttacks: 1.5
-    amount: 2
-    duration: 1
-    upgradeText: Quicker
-  - name: 1
-    speed: 0
-    damage: 10
-    range: 1
-    timeBetweenAttacks: 1.25
     amount: 3
     duration: 1
-    upgradeText: Longer Life
-  - name: 1
+    upgradeText: "\u91CA\u653E\u51FA\u6DF7\u4E71\u96BE\u4EE5\u63A7\u5236\u7684\u706B\u7403
+      \u4ECE\u5929\u7A7A\u843D\u4E0B \u662F\u6781\u96BE\u64CD\u63A7\u7684\u6CD5\u672F"
+  - name: "\u5929\u5760\u706B\u96E8"
     speed: 0
-    damage: 10
+    damage: 1
     range: 1
-    timeBetweenAttacks: 1.25
-    amount: 4
-    duration: 2
-    upgradeText: Bigger
-  - name: 
+    timeBetweenAttacks: 1.5
+    amount: 6
+    duration: 1
+    upgradeText: "\u91CA\u653E\u51FA\u6DF7\u4E71\u96BE\u4EE5\u63A7\u5236\u7684\u706B\u7403
+      \u4ECE\u5929\u7A7A\u843D\u4E0B \u662F\u6781\u96BE\u64CD\u63A7\u7684\u6CD5\u672F"
+  - name: "\u5929\u5760\u706B\u96E8"
     speed: 0
-    damage: 10
+    damage: 3
+    range: 1.5
+    timeBetweenAttacks: 1.25
+    amount: 10
+    duration: 1
+    upgradeText: "\u91CA\u653E\u51FA\u6DF7\u4E71\u96BE\u4EE5\u63A7\u5236\u7684\u706B\u7403
+      \u4ECE\u5929\u7A7A\u843D\u4E0B \u662F\u6781\u96BE\u64CD\u63A7\u7684\u6CD5\u672F"
+  - name: "\u5929\u5760\u706B\u96E8"
+    speed: 0
+    damage: 5
+    range: 1.5
+    timeBetweenAttacks: 1.25
+    amount: 10
+    duration: 2
+    upgradeText: "\u91CA\u653E\u51FA\u6DF7\u4E71\u96BE\u4EE5\u63A7\u5236\u7684\u706B\u7403
+      \u4ECE\u5929\u7A7A\u843D\u4E0B \u662F\u6781\u96BE\u64CD\u63A7\u7684\u6CD5\u672F"
+  - name: "\u5929\u5760\u706B\u96E8"
+    speed: 0
+    damage: 5
     range: 2
     timeBetweenAttacks: 1.25
-    amount: 5
-    duration: 2
-    upgradeText: Crazy Time
-  - name: 
-    speed: 0
-    damage: 15
-    range: 2
-    timeBetweenAttacks: 1
     amount: 15
     duration: 2
-    upgradeText: Fully upgrade
+    upgradeText: "\u91CA\u653E\u51FA\u6DF7\u4E71\u96BE\u4EE5\u63A7\u5236\u7684\u706B\u7403
+      \u4ECE\u5929\u7A7A\u843D\u4E0B \u662F\u6781\u96BE\u64CD\u63A7\u7684\u6CD5\u672F"
+  - name: "\u5929\u5760\u706B\u96E8"
+    speed: 0
+    damage: 7
+    range: 2
+    timeBetweenAttacks: 1
+    amount: 20
+    duration: 2
+    upgradeText: "\u91CA\u653E\u51FA\u6DF7\u4E71\u96BE\u4EE5\u63A7\u5236\u7684\u706B\u7403
+      \u4ECE\u5929\u7A7A\u843D\u4E0B \u662F\u6781\u96BE\u64CD\u63A7\u7684\u6CD5\u672F"
   weaponLevel: 0
-  icon: {fileID: -1061488230, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
+  icon: {fileID: -196789849, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
   statsUpdated: 0
   damager: {fileID: 1645445768}
 --- !u!1 &1491667066
@@ -18056,7 +18076,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1516817633
 Transform:
   m_ObjectHideFlags: 0
@@ -18200,8 +18220,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u5347\u7EA7\u6548\u679C"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c1edaa3ecb162c444becbb4e6edcd66d, type: 2}
-  m_sharedMaterial: {fileID: 1213609399967162842, guid: c1edaa3ecb162c444becbb4e6edcd66d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5405c47b20c4af5449aebeeea7cd30e4, type: 2}
+  m_sharedMaterial: {fileID: 6423213317940349454, guid: 5405c47b20c4af5449aebeeea7cd30e4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -18225,7 +18245,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.25
+  m_fontSize: 33.5
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -18460,8 +18480,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.28729248, y: 0}
+  m_SizeDelta: {x: -0.0336, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1539927413
 MonoBehaviour:
@@ -18483,7 +18503,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -19497,12 +19517,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1645445767}
-  - component: {fileID: 1645445769}
   - component: {fileID: 1645445768}
   - component: {fileID: 1645445770}
   - component: {fileID: 1645445771}
+  - component: {fileID: 1645445772}
   m_Layer: 7
-  m_Name: Axe
+  m_Name: Fireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19546,51 +19566,6 @@ MonoBehaviour:
   timeBetweenDamage: 0
   destroyOnImpact: 0
   canDefendBullet: 0
---- !u!61 &1645445769
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1645445766}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.010001659, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.0160966, y: 1}
-  m_EdgeRadius: 0
 --- !u!50 &1645445770
 Rigidbody2D:
   serializedVersion: 4
@@ -19633,6 +19608,41 @@ MonoBehaviour:
   throwPower: 5
   theRB: {fileID: 1645445770}
   rotateSpeed: 1
+--- !u!58 &1645445772
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645445766}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.2540219
 --- !u!1 &1647332936
 GameObject:
   m_ObjectHideFlags: 0
@@ -20343,7 +20353,7 @@ GameObject:
   - component: {fileID: 1710842247}
   - component: {fileID: 1710842248}
   m_Layer: 7
-  m_Name: Vampire Survival Sprites_Padded_6
+  m_Name: Spirte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20405,7 +20415,7 @@ SpriteRenderer:
   m_SortingLayerID: 994593391
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1061488230, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
+  m_Sprite: {fileID: -196789849, guid: 99f10abcf979e904b883da0c6922d74f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -21227,30 +21237,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-  - name: 1
+  - name: "\u6307\u8DEF\u660E\u706F"
+    speed: 0.5
+    damage: 1
+    range: 1
+    timeBetweenAttacks: 8
+    amount: 0
+    duration: 7
+    upgradeText: "\u70B9\u4EAE\u624B\u4E2D\u7684\u63D0\u706F \u53D1\u51FA\u7684\u5149\u4EAE\u5C06\u5BF9\u5468\u56F4\u7684\u654C\u4EBA\u9020\u6210\u4F24\u5BB3
+      \u5E76\u5BF9\u6CBB\u7597\u8303\u56F4\u5185\u7684\u53CB\u519B"
+  - name: "\u6307\u8DEF\u660E\u706F"
     speed: 0.5
     damage: 2
     range: 1
     timeBetweenAttacks: 8
     amount: 0
     duration: 7
-    upgradeText: Plus Damage
-  - name: 1
+    upgradeText: "\u70B9\u4EAE\u624B\u4E2D\u7684\u63D0\u706F \u53D1\u51FA\u7684\u5149\u4EAE\u5C06\u5BF9\u5468\u56F4\u7684\u654C\u4EBA\u9020\u6210\u4F24\u5BB3
+      \u5E76\u5BF9\u6CBB\u7597\u8303\u56F4\u5185\u7684\u53CB\u519B"
+  - name: "\u6307\u8DEF\u660E\u706F"
     speed: 0.5
-    damage: 3
-    range: 1
-    timeBetweenAttacks: 8
-    amount: 0
-    duration: 7
-    upgradeText: Plus Range
-  - name: 1
-    speed: 0.5
-    damage: 3
+    damage: 2
     range: 2
     timeBetweenAttacks: 8
     amount: 0
     duration: 7
-    upgradeText: Time Between Damage Decrease
+    upgradeText: "\u70B9\u4EAE\u624B\u4E2D\u7684\u63D0\u706F \u53D1\u51FA\u7684\u5149\u4EAE\u5C06\u5BF9\u5468\u56F4\u7684\u654C\u4EBA\u9020\u6210\u4F24\u5BB3
+      \u5E76\u5BF9\u6CBB\u7597\u8303\u56F4\u5185\u7684\u53CB\u519B"
+  - name: "\u6307\u8DEF\u660E\u706F"
+    speed: 0.5
+    damage: 2
+    range: 2
+    timeBetweenAttacks: 7
+    amount: 0
+    duration: 7
+    upgradeText: "\u70B9\u4EAE\u624B\u4E2D\u7684\u63D0\u706F \u53D1\u51FA\u7684\u5149\u4EAE\u5C06\u5BF9\u5468\u56F4\u7684\u654C\u4EBA\u9020\u6210\u4F24\u5BB3
+      \u5E76\u5BF9\u6CBB\u7597\u8303\u56F4\u5185\u7684\u53CB\u519B"
+  - name: "\u6307\u8DEF\u660E\u706F"
+    speed: 0.5
+    damage: 3
+    range: 2
+    timeBetweenAttacks: 6
+    amount: 0
+    duration: 7
+    upgradeText: "\u70B9\u4EAE\u624B\u4E2D\u7684\u63D0\u706F \u53D1\u51FA\u7684\u5149\u4EAE\u5C06\u5BF9\u5468\u56F4\u7684\u654C\u4EBA\u9020\u6210\u4F24\u5BB3
+      \u5E76\u5BF9\u6CBB\u7597\u8303\u56F4\u5185\u7684\u53CB\u519B"
   weaponLevel: 0
   icon: {fileID: 21300000, guid: 0c78c8dd7f0745146b5b5c4fad8288e4, type: 3}
   statsUpdated: 0
@@ -26873,7 +26904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buffstats:
     name: "\u4E50\u89C2\u4E4B\u5FC3"
-    icon: {fileID: 21300000, guid: d85fa51c15c9f164aa42e14e542e4593, type: 3}
+    icon: {fileID: 21300000, guid: c8cd7f900a9905641bcf2d3e3fec8d10, type: 3}
     level: 3
     describeText: "\u589E\u52A0\u68A6\u5883\u6838\u5FC3\u7684\u653B\u51FB\u9891\u7387"
   core_zone: {fileID: 1220249310}
@@ -26955,7 +26986,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buffstats:
     name: "\u52A0\u901FII"
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: 13ec9d7fb6f73d9458b61242c8e51f44, type: 3}
     level: 3
     describeText: "\u660E\u663E\u589E\u52A0\u79FB\u52A8\u901F\u5EA6"
   improveSpeed: 1
@@ -79434,7 +79465,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u7B2C \u4E00 \u6CE2"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3fe3a19f08cbf2a459b4734be067f2f2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5405c47b20c4af5449aebeeea7cd30e4, type: 2}
   m_sharedMaterial: {fileID: -5143658965807497271, guid: 3fe3a19f08cbf2a459b4734be067f2f2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -79498,7 +79529,7 @@ MonoBehaviour:
   m_margin: {x: -181.13544, y: -32.66382, z: -190.34058, w: -56.41919}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1923268515
@@ -79632,7 +79663,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buffstats:
     name: "\u6740\u654C\u6062\u590DII"
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: 72ddaa70e7e5f3646bbec6a0798a344c, type: 3}
     level: 3
     describeText: "\u51FB\u6740\u654C\u4EBA\u540E\u6062\u590D\u4E00\u5B9A\u751F\u547D\u503C"
   lowLevel: {fileID: 1099743086}
@@ -80815,7 +80846,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buffstats:
     name: "\u6355\u68A6\u8005"
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: 1e120a5419ad10c4a8cf4e93990ac91a, type: 3}
     level: 2
     describeText: "\u7565\u5FAE\u589E\u52A0\u83B7\u5F97\u7684\u7ECF\u9A8C\u503C"
 --- !u!1 &2071424749

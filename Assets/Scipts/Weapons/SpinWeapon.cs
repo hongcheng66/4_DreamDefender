@@ -24,18 +24,21 @@ public class SpinWeapon : Weapon
     // Update is called once per frame
     void Update()
     {
-        
+        if (PlayerController.instance.isDead == false)
+        {
+            if (PlayerController.instance.awakeStat == true)
+            {
+                amount = 0;
+                StartCoroutine(RoundMode());
+            }
+            else
+            {
+                if(amount <= stats[weaponLevel].amount)
+                StartCoroutine(AutoFlyingMode());
+            }
 
-        if(PlayerController.instance.awakeStat == true)
-        {
-            amount = 0;
-            StartCoroutine(RoundMode());
         }
-        else
-        {
-            if(amount <= stats[weaponLevel].amount)
-            StartCoroutine(AutoFlyingMode());
-        }
+
 
 
         if (statsUpdated)

@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
         if (assignedWeapons.Count == 0)
         {
             //AddWeapon(Random.Range(0,unassignedWeapons.Count));   
-            AddWeapon(3);
+            AddWeapon(2);
         }
 
         for (int i = 0; i < unassignedWeapons.Count; i++)

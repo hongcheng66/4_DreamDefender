@@ -34,7 +34,7 @@ public class ExperienceLevelController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        UIController.instance.explvlSlider.value = currentExperience;
     }
 
     public void GetExp(int amountToGet)

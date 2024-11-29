@@ -24,18 +24,23 @@ public class WeaponThrower : Weapon
             SetStats();
         }
 
-        throwCounter -= Time.deltaTime;
-        if(throwCounter <= 0)
+        if (PlayerController.instance.isDead == false)
         {
-            throwCounter = stats[weaponLevel].timeBetweenAttacks;
-
-            for(int i = 0;i < stats[weaponLevel].amount;i++)
+            throwCounter -= Time.deltaTime;
+            if(throwCounter <= 0)
             {
-                Instantiate(damager, damager.transform.position, damager.transform.rotation).gameObject.SetActive(true); 
+                throwCounter = stats[weaponLevel].timeBetweenAttacks;
+
+                for(int i = 0;i < stats[weaponLevel].amount;i++)
+                {
+                    Instantiate(damager, damager.transform.position, damager.transform.rotation).gameObject.SetActive(true); 
+                }
+
+                SFXManager.instance.PlaySFXPitched(4);//Í¶ÖÀÎäÆ÷ÒôÐ§
             }
 
-            SFXManager.instance.PlaySFXPitched(4);//Í¶ÖÀÎäÆ÷ÒôÐ§
         }
+
     }
 
     void SetStats()

@@ -23,15 +23,18 @@ public class ZoneWeapon : Weapon
             SetStats();
         }
 
-        spawnCounter -= Time.deltaTime;
-
-        if(spawnCounter <= 0f)
+        if (PlayerController.instance.isDead == false)
         {
-            spawnCounter = spawnTime;
+            spawnCounter -= Time.deltaTime;
 
-            Instantiate(damager, damager.transform.position, Quaternion.identity, transform).gameObject.SetActive(true);
+            if (spawnCounter <= 0f)
+            {
+                spawnCounter = spawnTime;
 
-            SFXManager.instance.PlaySFXPitched(10);
+                Instantiate(damager, damager.transform.position, Quaternion.identity, transform).gameObject.SetActive(true);
+
+                SFXManager.instance.PlaySFXPitched(10);
+            }
         }
     }
 
