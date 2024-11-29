@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class Buff_CoreZoneAttaack : Buff
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject core_zoneAttack;
+    private void OnEnable()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        core_zoneAttack.SetActive(true);
+        core_zoneAttack.GetComponent<Core_ZoneAttack>().isAttack = true;
     }
 }

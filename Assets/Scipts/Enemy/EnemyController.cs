@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public Rigidbody2D theRB;
+    public float originSpeed;
     public float moveSpeed;
     private Transform target;
 
@@ -53,6 +54,8 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        originSpeed = moveSpeed;
+
         isalive = true;
         StartCoroutine(ChangeAlpha(new Color(1, 1, 1, 0), Color.white, waitTime)); //实现透明出现效果
 
