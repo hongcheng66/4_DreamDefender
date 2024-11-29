@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class EnemyController : MonoBehaviour
 {
     public Rigidbody2D theRB;
     public float originSpeed;
     public float moveSpeed;
-    private Transform target;
+    private GameObject target;
 
     public float damage;
 
@@ -61,17 +62,21 @@ public class EnemyController : MonoBehaviour
 
         if(isPositive == false)
         {
-            target = FindObjectOfType<CoreController>().transform;
+            target = FindObjectOfType<CoreController>().gameObject;
         }
         else
         {
-            target = FindObjectOfType<PlayerController>().transform;
+            target = FindObjectsOfType<PlayerController>()
+                              .Where(pc => pc.gameObject.CompareTag("Player"))
+                              .FirstOrDefault()?.gameObject;
         }
 
 
         if (isArcher)
         {
-            aimTarget = FindObjectOfType<PlayerController>().gameObject;
+            aimTarget = FindObjectsOfType<PlayerController>()
+                              .Where(pc => pc.gameObject.CompareTag("Player"))
+                              .FirstOrDefault()?.gameObject;
         }
     }
 
@@ -80,53 +85,67 @@ public class EnemyController : MonoBehaviour
     {
         if (isappear)
         {
-            if (PlayerController.instance.gameObject.activeSelf == true)
+            if(target != null)
             {
-                if (knockBackCounter > 0)  //击退判定
+                if (target.activeSelf == true)
                 {
-                    knockBackCounter -= Time.deltaTime;
-
-                    if (moveSpeed > 0)
+                    if (knockBackCounter > 0)  //击退判定
                     {
-                        moveSpeed = -moveSpeed * 2f;
+                        knockBackCounter -= Time.deltaTime;
+
+                        if (moveSpeed > 0)
+                        {
+                            moveSpeed = -moveSpeed * 2f;
+                        }
+
+                        if (knockBackCounter <= 0)
+                        {
+                            moveSpeed = Mathf.Abs(moveSpeed * .5f);  //还原被击退的速度
+                        }
+                    }
+                    theRB.velocity = (target.transform.position - transform.position).normalized * moveSpeed;
+
+                    if (hitCounter > 0f)
+                    {
+                        hitCounter -= Time.deltaTime;
                     }
 
-                    if (knockBackCounter <= 0)
+                    if(isArcher)
                     {
-                        moveSpeed = Mathf.Abs(moveSpeed * .5f);  //还原被击退的速度
+                        shotCounter -= Time.deltaTime;
+
+                        if (shotCounter < 0)
+                        {
+                            shotCounter = timeBetweenAttacks;
+
+                            Vector3 direction = aimTarget.transform.position - transform.position;
+                            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                            angle -= 90;
+                            bullet.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                            bullet.GetComponent<BulletController>().lifeTime = bulletFlyingTime;
+                            bullet.GetComponent<BulletController>().damageAmount = bulletDamage;
+                            bullet.GetComponent<BulletController>().isStrike = isStrike;
+
+                            Instantiate(bullet, transform.position, bullet.transform.rotation).gameObject.SetActive(true);
+                        }
                     }
-                }
-                theRB.velocity = (target.position - transform.position).normalized * moveSpeed;
 
-                if (hitCounter > 0f)
+                }
+                else
                 {
-                    hitCounter -= Time.deltaTime;
+                    theRB.velocity = Vector2.zero;
                 }
-
-                if(isArcher)
-                {
-                    shotCounter -= Time.deltaTime;
-
-                    if (shotCounter < 0)
-                    {
-                        shotCounter = timeBetweenAttacks;
-
-                        Vector3 direction = aimTarget.transform.position - transform.position;
-                        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-                        angle -= 90;
-                        bullet.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-                        bullet.GetComponent<BulletController>().lifeTime = bulletFlyingTime;
-                        bullet.GetComponent<BulletController>().damageAmount = bulletDamage;
-                        bullet.GetComponent<BulletController>().isStrike = isStrike;
-
-                        Instantiate(bullet, transform.position, bullet.transform.rotation).gameObject.SetActive(true);
-                    }
-                }
-
             }
             else
             {
-                theRB.velocity = Vector2.zero;
+                if (isPositive == false)
+                {
+                    target = FindObjectOfType<CoreController>().gameObject;
+                }
+                else
+                {
+                    target = FindObjectOfType<PlayerController>().gameObject;
+                }
             }
         }
 

@@ -1,12 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class BuffController : MonoBehaviour
 {
     public static BuffController instance;
 
     public List<Buff> buffBechosen;
+
+    private GameObject target;
+    private PlayerController player;
+
+    private void Start()
+    {
+        target = FindObjectsOfType<PlayerController>()
+                             .Where(pc => pc.gameObject.CompareTag("Player"))
+                             .FirstOrDefault()?.gameObject;
+        player = target.GetComponent<PlayerController>();
+    }
 
     private void Awake()
     {
@@ -23,11 +35,11 @@ public class BuffController : MonoBehaviour
 
         List<Buff> availableBuff = new List<Buff>();
 
-        for (int i = 0; i < PlayerController.instance.unassignedbuffs.Count; i++) //将所有满足等级条件的buff加入选择池子
+        for (int i = 0; i < player.unassignedbuffs.Count; i++) //将所有满足等级条件的buff加入选择池子
         {
-            if(EnemySpawner.instance.currentWave + 1 >= PlayerController.instance.unassignedbuffs[i].buffstats.level) //如果当前的回合数大于buff的等级 那么就可以获得这个buff
+            if(EnemySpawner.instance.currentWave + 1 >= player.unassignedbuffs[i].buffstats.level) //如果当前的回合数大于buff的等级 那么就可以获得这个buff
             {
-                availableBuff.Add(PlayerController.instance.unassignedbuffs[i]);
+                availableBuff.Add(player.unassignedbuffs[i]);
             }
         }
 

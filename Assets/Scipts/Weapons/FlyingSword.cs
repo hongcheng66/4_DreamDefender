@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
+
 
 public class FlyingSword : MonoBehaviour
 {
@@ -10,6 +12,17 @@ public class FlyingSword : MonoBehaviour
 
     private Collider2D currentTarget;
     private float timeSinceLastTargetChange;
+
+    private GameObject target;
+    private PlayerController player;
+
+    private void Start()
+    {
+        target = FindObjectsOfType<PlayerController>()
+                             .Where(pc => pc.gameObject.CompareTag("Player"))
+                             .FirstOrDefault()?.gameObject;
+        player = target.GetComponent<PlayerController>();
+    }
 
     void Update()
     {
@@ -46,7 +59,7 @@ public class FlyingSword : MonoBehaviour
 
         }
 
-        if(PlayerController.instance.awakeStat == true)
+        if(player.GetComponent<PlayerController>().awakeStat == true)
         {
             Destroy(gameObject);
         }

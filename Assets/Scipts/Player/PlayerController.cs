@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
         if (isDead == false)
         {
-            if (Input.GetKeyDown(KeyCode.F) && switchcooldownCounter < 0)
+            if (Input.GetKeyDown(KeyCode.F) && switchcooldownCounter < 0 && gameObject.tag == "Player")
             {
                 switchcooldownCounter = switchCooldown;
                 StateController.instance.SetCooldownOf(); //ÉèÖÃÇÐ»»ÐÎÌ¬µÄCD

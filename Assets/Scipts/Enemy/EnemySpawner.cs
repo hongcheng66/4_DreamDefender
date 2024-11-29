@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Threading;
+using System.Linq;
+
 public class EnemySpawner : MonoBehaviour
 {
     public static EnemySpawner instance;
@@ -15,6 +16,8 @@ public class EnemySpawner : MonoBehaviour
     private float spawnCounter;
 
     public Transform minSpawn, maxSpawn;
+
+    private GameObject target;
 
     private float despawnDistance;
 
@@ -39,6 +42,10 @@ public class EnemySpawner : MonoBehaviour
 
         despawnDistance = Vector3.Distance(transform.position, maxSpawn.position) + 4f;  //计算距离 用于删除距离过远的怪物
 
+        target = FindObjectsOfType<PlayerController>()
+                              .Where(pc => pc.gameObject.CompareTag("Player"))
+                              .FirstOrDefault()?.gameObject;
+
         currentWave = -1;
         GoToNextWave();
     }
@@ -46,7 +53,7 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerHealthController.instance.gameObject.activeSelf)
+        if (target.activeSelf)
         {
             if (currentWave < waves.Count)
             {

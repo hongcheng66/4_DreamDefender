@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 
 public class PlayerHealthController : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class PlayerHealthController : MonoBehaviour
 
     public GameObject deathEffect;
 
+    private GameObject target;
+    private PlayerController player;
+
     private void Awake()
     {
         instance = this;
@@ -28,6 +32,12 @@ public class PlayerHealthController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        target = FindObjectsOfType<PlayerController>()
+                             .Where(pc => pc.gameObject.CompareTag("Player"))
+                             .FirstOrDefault()?.gameObject;
+        player = target.GetComponent<PlayerController>();
+
         currentHealth = maxHealth;
 
         healthSlider.maxValue = maxHealth;
@@ -73,7 +83,7 @@ public class PlayerHealthController : MonoBehaviour
 
     public void TakeDamage(float damageToTake)
     {
-        if(PlayerController.instance.isDead == false)
+        if(player.isDead == false)
         {
             currentHealth -= damageToTake;
 
@@ -88,8 +98,8 @@ public class PlayerHealthController : MonoBehaviour
 
     private IEnumerator Revive()
     {
-        PlayerController.instance.isDead = true;
-        PlayerController.instance.transform.position = CoreController.instance.transform.position;
+        player.isDead = true;
+        player.transform.position = CoreController.instance.transform.position;
 
         restReviveTime = reviveTime;
         restTimeText.text = restReviveTime.ToString();
@@ -102,7 +112,7 @@ public class PlayerHealthController : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
         restTimeText.gameObject.SetActive(false);
-        PlayerController.instance.isDead = false;
+        player.isDead = false;
         currentHealth = maxHealth;
         healthSlider.value = currentHealth;
 

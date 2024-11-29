@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
+using System.Linq;
 
 public class LevelUpSelectionButton : MonoBehaviour,IPointerEnterHandler, IPointerExitHandler
 {
@@ -11,6 +12,17 @@ public class LevelUpSelectionButton : MonoBehaviour,IPointerEnterHandler, IPoint
     public Image weaponIcon;
 
     private Weapon assignedWeapon;
+
+    private GameObject target;
+    private PlayerController player;
+
+    private void Start()
+    {
+        target = FindObjectsOfType<PlayerController>()
+                             .Where(pc => pc.gameObject.CompareTag("Player"))
+                             .FirstOrDefault()?.gameObject;
+        player = target.GetComponent<PlayerController>();
+    }
 
     public void UpdateButtonDisplay(Weapon theWeapon)
     {
@@ -48,9 +60,9 @@ public class LevelUpSelectionButton : MonoBehaviour,IPointerEnterHandler, IPoint
             }
             else
             {
-                if(PlayerController.instance.assignedWeapons.Count + PlayerController.instance.fullyLeveledWeapons.Count < PlayerController.instance.maxWeapons)
+                if(player.assignedWeapons.Count + player.fullyLeveledWeapons.Count < player.maxWeapons)
                 {
-                    PlayerController.instance.AddWeapon(assignedWeapon);
+                    player.AddWeapon(assignedWeapon);
                     UIController.instance.levelUpPanel.SetActive(false);
                     UIController.instance.weaponToolTip.HideToolTip();
                     Time.timeScale = 1f;
@@ -64,14 +76,14 @@ public class LevelUpSelectionButton : MonoBehaviour,IPointerEnterHandler, IPoint
                     UIController.instance.levelUpPanel.SetActive(false);
                     UIController.instance.changeWeaponPanel.SetActive(true);
 
-                    for (int i = 0;i < PlayerController.instance.assignedWeapons.Count;i++)
+                    for (int i = 0;i < player.assignedWeapons.Count;i++)
                     {
-                        UI_ChangeWeapon.instance.levelUpButtons[i].UpdateButtonDisplay(PlayerController.instance.assignedWeapons[i]);
+                        UI_ChangeWeapon.instance.levelUpButtons[i].UpdateButtonDisplay(player.assignedWeapons[i]);
                     }
 
                     for (int i = 0; i < UI_ChangeWeapon.instance.levelUpButtons.Length; i++)
                     {
-                        if (i < PlayerController.instance.assignedWeapons.Count)
+                        if (i < player.assignedWeapons.Count)
                         {
                             UI_ChangeWeapon.instance.levelUpButtons[i].gameObject.SetActive(true);
                         }
@@ -80,7 +92,7 @@ public class LevelUpSelectionButton : MonoBehaviour,IPointerEnterHandler, IPoint
                             UI_ChangeWeapon.instance.levelUpButtons[i].gameObject.SetActive(false);
                         }
                     }
-                    PlayerController.instance.AddWeapon(assignedWeapon);
+                    player.AddWeapon(assignedWeapon);
                 }
                     
             }
@@ -91,7 +103,7 @@ public class LevelUpSelectionButton : MonoBehaviour,IPointerEnterHandler, IPoint
     {
         if(assignedWeapon != null)
         {
-            PlayerController.instance.DeleteWeapon(assignedWeapon);
+            player.DeleteWeapon(assignedWeapon);
         }
         UIController.instance.changeWeaponPanel.SetActive(false);
         UIController.instance.weaponToolTip.HideToolTip();

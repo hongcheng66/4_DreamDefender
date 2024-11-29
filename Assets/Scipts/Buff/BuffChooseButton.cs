@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
 using UnityEngine.UI;
+using System.Linq;
 
 public class BuffChooseButton : MonoBehaviour,IPointerEnterHandler, IPointerExitHandler
 {
@@ -11,6 +12,17 @@ public class BuffChooseButton : MonoBehaviour,IPointerEnterHandler, IPointerExit
     public Image buffIcon;
 
     private Buff assignedBuff;
+
+    private GameObject target;
+    private PlayerController player;
+
+    private void Start()
+    {
+        target = FindObjectsOfType<PlayerController>()
+                             .Where(pc => pc.gameObject.CompareTag("Player"))
+                             .FirstOrDefault()?.gameObject;
+        player = target.GetComponent<PlayerController>();
+    }
 
     public void DisplayBuff(Buff _buff)
     {
@@ -26,7 +38,7 @@ public class BuffChooseButton : MonoBehaviour,IPointerEnterHandler, IPointerExit
     {
         if(assignedBuff != null)
         {
-            PlayerController.instance.AddBuff(assignedBuff);
+            player.AddBuff(assignedBuff);
             UIController.instance.buffGetPanel.SetActive(false);
             UIController.instance.buffToolTip.HideToolTip();
             Time.timeScale = 1f;

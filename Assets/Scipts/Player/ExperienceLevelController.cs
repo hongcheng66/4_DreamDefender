@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class ExperienceLevelController : MonoBehaviour
 {
@@ -22,10 +23,18 @@ public class ExperienceLevelController : MonoBehaviour
 
     public List<Weapon> weaponToUpgrade;
 
+    private GameObject target;
+    private PlayerController player;
+
     // Start is called before the first frame update
     void Start()
     {
-        while(expLevels.Count < levelCount)
+        target = FindObjectsOfType<PlayerController>()
+                             .Where(pc => pc.gameObject.CompareTag("Player"))
+                             .FirstOrDefault()?.gameObject;
+        player = target.GetComponent<PlayerController>();
+
+        while (expLevels.Count < levelCount)
         {
             expLevels.Add(Mathf.CeilToInt(expLevels[expLevels.Count - 1] * 1.1f));
         }
@@ -74,7 +83,7 @@ public class ExperienceLevelController : MonoBehaviour
         weaponToUpgrade.Clear();
 
         List<Weapon> availableWeapons = new List<Weapon>();
-        availableWeapons.AddRange(PlayerController.instance.assignedWeapons); //将以解锁的武器加入可使用的武器
+        availableWeapons.AddRange(player.assignedWeapons); //将以解锁的武器加入可使用的武器
 
         if(availableWeapons.Count > 0)
         {
@@ -83,9 +92,9 @@ public class ExperienceLevelController : MonoBehaviour
             availableWeapons.RemoveAt(selected);
         }
             
-        if(PlayerController.instance.assignedWeapons.Count + PlayerController.instance.fullyLeveledWeapons.Count < 4) //如果持有的武器量未达到展示槽位上限
+        if(player.assignedWeapons.Count + player.fullyLeveledWeapons.Count < 4) //如果持有的武器量未达到展示槽位上限
         {
-            availableWeapons.AddRange(PlayerController.instance.unassignedWeapons);   //在可使用的武器中加入还未解锁的武器
+            availableWeapons.AddRange(player.unassignedWeapons);   //在可使用的武器中加入还未解锁的武器
         }
 
         for(int i = weaponToUpgrade.Count;i < 4;i++)//将未解锁的武器加入列表

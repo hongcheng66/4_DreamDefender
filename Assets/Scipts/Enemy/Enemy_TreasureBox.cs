@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
 public class Enemy_TreasureBox : MonoBehaviour
 {
     public Animator anim;
 
     public Rigidbody2D theRB;
     public float moveSpeed;
-    private Transform target;
 
     public float damage;
 
@@ -32,14 +31,21 @@ public class Enemy_TreasureBox : MonoBehaviour
     public float runningTime = 5f;
     private float runningCounter;
 
+    private GameObject target;
+    private PlayerController player;
+
     // Start is called before the first frame update
     void Start()
     {
+
         health = 10f * (EnemySpawner.instance.currentWave + 1);
         isalive = true;
         runningCounter = runningTime;
         StartCoroutine(ChangeAlpha(new Color(1, 1, 1, 0), Color.white, waitTime)); //实现透明出现效果
-        target = FindObjectOfType<CoreController>().transform;
+        target = FindObjectsOfType<PlayerController>()
+                            .Where(pc => pc.gameObject.CompareTag("Player"))
+                            .FirstOrDefault()?.gameObject;
+        player = target.GetComponent<PlayerController>();
 
     }
 
@@ -48,7 +54,7 @@ public class Enemy_TreasureBox : MonoBehaviour
     {
         if (isappear)
         {
-            if (PlayerController.instance.gameObject.activeSelf == true)
+            if (target.activeSelf == true)
             {
                 if (knockBackCounter > 0)  //击退判定
                 {
@@ -65,7 +71,7 @@ public class Enemy_TreasureBox : MonoBehaviour
                     }
                 }
 
-                theRB.velocity = (target.position - transform.position).normalized * moveSpeed;
+                theRB.velocity = (target.transform.position - transform.position).normalized * moveSpeed;
 
                 if (isRunningaway == true)
                 {
