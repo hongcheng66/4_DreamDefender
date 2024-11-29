@@ -29,6 +29,17 @@ public class UI_WeaponToolTip : UI_Tooltip
             weaponText.text = "介绍:" + weapon.stats[0].upgradeText;
             
         }
+        else if(weapon.weaponLevel + 1 > weapon.stats.Count)
+        {
+            weaponName.text = weapon.stats[weapon.weaponLevel].name;
+            weaponSpeed.text = "武器速度:" + weapon.stats[weapon.weaponLevel].speed;
+            weaponDamage.text = "伤害:" + weapon.stats[weapon.weaponLevel].damage;
+            weaponRange.text = "范围:" + weapon.stats[weapon.weaponLevel].range;
+            weaponAttackTime.text = "攻击间隔:" + weapon.stats[weapon.weaponLevel].timeBetweenAttacks;
+            weaponAmount.text = "数量:" + weapon.stats[weapon.weaponLevel].amount;
+            weaponDuration.text = "持续时间:" + weapon.stats[weapon.weaponLevel].duration;
+            weaponText.text = "介绍:" + weapon.stats[weapon.weaponLevel].upgradeText;
+        }
         else
         {
             weaponName.text = weapon.stats[weapon.weaponLevel].name;

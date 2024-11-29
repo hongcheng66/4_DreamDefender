@@ -9,6 +9,7 @@ TagManager:
   - Treasure
   - EnemyBullet
   - DefendBulletWeapon
+  - Fake
   layers:
   - Default
   - TransparentFX

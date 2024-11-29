@@ -59,7 +59,7 @@ public class FlyingSword : MonoBehaviour
 
         }
 
-        if(player.GetComponent<PlayerController>().awakeStat == true)
+        if(player.GetComponent<PlayerController>().awakeStat == true && player.dreamComeTrue == false)
         {
             Destroy(gameObject);
         }

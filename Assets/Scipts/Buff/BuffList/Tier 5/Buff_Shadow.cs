@@ -5,8 +5,10 @@ using UnityEngine;
 public class Buff_Shadow : Buff
 {
     private GameObject player;
+
     private GameObject shadow;
-    private int amount = 1;
+    private List<GameObject> shadows = new List<GameObject>();
+    private int amount = 2;
     void Start()
     {
         player = FindObjectOfType<PlayerController>().gameObject;
@@ -17,14 +19,41 @@ public class Buff_Shadow : Buff
     {
         if(player.GetComponent<PlayerController>().awakeStat == false && amount > 0)
         {
-            shadow = Instantiate(player,transform.position, Quaternion.identity);
-            shadow.tag = "Fake";
-            amount--;
+            StartCoroutine(Clone());
         }
         if(player.GetComponent<PlayerController>().awakeStat == true)
         {
-            amount = 1;
-            Destroy(shadow);
+            if(player.GetComponent<PlayerController>().dreamComeTrue == false)
+            {
+                for(int i = 0;i < shadows.Count;i++)
+                {
+                    Destroy(shadows[i]);
+                }
+                shadows.Clear();
+                amount = 2;
+            }
         }
+    }
+
+    private IEnumerator Clone()
+    {
+        amount--;
+        yield return new WaitForSeconds(1f);
+
+        shadow = Instantiate(player, transform.position, Quaternion.identity);
+        shadow.tag = "Fake";
+        shadow.GetComponent<PlayerController>().assignedbuffs.Clear();
+        shadow.GetComponent<PlayerController>().unassignedbuffs.Clear();
+
+        Transform[] childTransforms = shadow.GetComponentsInChildren<Transform>(true);
+
+        foreach (Transform child in childTransforms)
+        {
+            if (child.name == "Health Canvas")
+            {
+                Destroy(child.gameObject);
+            }
+        }
+        shadows.Add(shadow);
     }
 }

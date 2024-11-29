@@ -39,6 +39,8 @@ public class PlayerController : MonoBehaviour
     [Header("BUFF")]
     public List<Buff> unassignedbuffs, assignedbuffs;
 
+    public bool dreamComeTrue = false;
+
 
     void Start()
     {
@@ -47,7 +49,7 @@ public class PlayerController : MonoBehaviour
         if (assignedWeapons.Count == 0)
         {
             //AddWeapon(Random.Range(0,unassignedWeapons.Count));   
-            AddWeapon(2);
+            AddWeapon(3);
         }
 
         for (int i = 0; i < unassignedWeapons.Count; i++)

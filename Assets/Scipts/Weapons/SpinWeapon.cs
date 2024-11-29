@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class SpinWeapon : Weapon
 {
@@ -15,10 +16,18 @@ public class SpinWeapon : Weapon
     public FlyingSword flyingSword;
     private int amount;
 
+    private GameObject target;
+    private PlayerController player;
+
     // Start is called before the first frame update
     void Start()
     {
         SetStats();
+
+        target = FindObjectsOfType<PlayerController>()
+                            .Where(pc => pc.gameObject.CompareTag("Player"))
+                            .FirstOrDefault()?.gameObject;
+        player = target.GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -28,13 +37,17 @@ public class SpinWeapon : Weapon
         {
             if (PlayerController.instance.awakeStat == true)
             {
-                amount = 0;
+                if(player.dreamComeTrue == false)
+                    amount = 0;
+
                 StartCoroutine(RoundMode());
             }
             else
             {
                 if(amount <= stats[weaponLevel].amount)
-                StartCoroutine(AutoFlyingMode());
+                {
+                    StartCoroutine(AutoFlyingMode());
+                }
             }
 
         }
