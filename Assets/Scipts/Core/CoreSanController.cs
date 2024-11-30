@@ -45,7 +45,7 @@ public class CoreSanController : MonoBehaviour
 
             Instantiate(deathEffect, transform.position, transform.rotation);
 
-            SFXManager.instance.PlaySFX(3);//玩家死亡音效
+            //SFXManager.instance.PlaySFX(3);//玩家死亡音效
 
             LevelManager.instance.EndLevel();
         }
