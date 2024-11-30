@@ -13,7 +13,7 @@ public class Buff_SuperAwakeDream : Buff
                               .Where(pc => pc.gameObject.CompareTag("Player"))
                               .FirstOrDefault()?.gameObject;
         target.GetComponent<PlayerController>().isAwakeDream = true;
-        target.GetComponent<PlayerController>().switchCooldown = 60f;
+        target.GetComponent<PlayerController>().switchCooldown = 30f;
     }
 
 }

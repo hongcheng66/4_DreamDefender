@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main_Menu.unity
     guid: e41b9e8e689f9bd4facc6af879adfdf2
   - enabled: 1
+    path: Assets/Scenes/Analyse Dream.unity
+    guid: 8ca1061b25b6eae4fb27192e57d0f806
+  - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: a024ad96a3a42a54aa347a8c92094212
   m_configObjects: {}

@@ -217,11 +217,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theRB: {fileID: 6477943220761537266}
-  moveSpeed: 5
-  damage: 10
+  moveSpeed: 4
+  damage: 8
   hitWaitTime: 2
-  health: 30
-  knockBackTime: 0.5
+  health: 20
+  knockBackTime: 0
   sprite: {fileID: 7775466867604627412}
   waitTime: 1
   expToGive: 5
@@ -235,9 +235,9 @@ MonoBehaviour:
   isPositive: 1
   isArcher: 1
   bullet: {fileID: 3350118262265851350, guid: 2cfc913f66e88ab4f9df7dca7ac26daf, type: 3}
-  timeBetweenAttacks: 2
+  timeBetweenAttacks: 1
   bulletFlyingTime: 5
-  bulletDamage: 7
+  bulletDamage: 15
   isStrike: 0
 --- !u!114 &887856741241587138
 MonoBehaviour:
